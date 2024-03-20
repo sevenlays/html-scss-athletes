@@ -1,1 +1,93 @@
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 50%;
+  transition: 1s border-radius ease;
+}
+.people {
+  --columns: 2;
+
+  padding: 25px 55px;
+
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  gap: 20px;
+  grid-template-columns: repeat(var(--columns), 220px);
+
+  @media (min-width: 1000px) {
+    --columns: 4;
+  }
+
+  .person {
+    padding: 10px 10px 20px;
+    align-items: center;
+
+    transition: 1s transform ease;
+
+    .photo {
+      position: relative;
+      margin-bottom: 10px;
+
+      .rank {
+        width: 32px;
+        height: 32px;
+        background-color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        color: #8b0000;
+        position: absolute;
+        right: 10px;
+        top: 84px;
+      }
+    }
+  }
+
+  .details {
+    text-align: center;
+    .name {
+      display: inline;
+      padding-bottom: 20px;
+      color: #2f4f4f;
+    }
+    .extra {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 20px;
+      opacity: 0;
+      padding-top: 10px;
+    }
+  }
+
+  .person:hover {
+    display: block;
+    background: #eeeeee;
+    border-radius: 10px;
+    transform: scale(1.2);
+  }
+
+  .person:hover .extra {
+    opacity: 1;
+  }
+
+  .person:hover img {
+    border-radius: 60px;
+  }
+}
